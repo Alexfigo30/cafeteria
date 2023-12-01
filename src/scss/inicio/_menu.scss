@@ -1,0 +1,56 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.nuestro-menu {
+  background-image: url(../img/menu_arriba.svg),url(../img/menu_abajo.svg),linear-gradient(0deg, v.$primario, v.$primario);
+  background-position: center 5rem,center 92%,100%;
+  background-repeat: no-repeat;
+  background-size: 200%;
+  padding: 15rem 2rem 20rem;
+
+    @include m.tablet { 
+        background-size: 100%;
+       padding: 15rem 0 20rem;
+      }
+      @include m.desktop { 
+        background-size: 50%,50%,100%;
+        } 
+}
+
+@include m.tablet { 
+  .grid-menu {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2,1fr);
+}
+  }
+
+
+.menu{
+  h3{
+    color: v.$blanco;
+  }
+  li{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: v.$blanco;
+      font-size: 2.2rem;
+      line-height: 1.5;
+      margin: 0 0 2rem;
+
+      span {
+        color: v.$secundario;
+        display: block;
+       }
+
+    }
+
+    .precio{
+       font-size: 4rem;
+       font-weight: 700;
+    }
+  }
+}
